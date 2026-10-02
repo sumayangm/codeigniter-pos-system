@@ -13,6 +13,14 @@
         <a href="/users">Users</a>
     </nav>
 
+<?php if (session()->get('isLoggedIn')): ?>
+    <p>
+        Logged in as <?= esc(session()->get('username')) ?> |
+        <a href="/logout">Logout</a>
+    </p>
+<?php endif; ?>
+
+
     <p><a href="/customers/new">Add New Customer</a></p>
 
     <?php if (session('message')): ?>
